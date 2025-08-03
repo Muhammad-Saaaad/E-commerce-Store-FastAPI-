@@ -47,32 +47,32 @@ async def get_users(request:Request,db : db_dependency , credentials: HTTPAuthor
             detail=str(e)
         )
 
-# @router.delete('/delete' , status_code= status.HTTP_204_NO_CONTENT)
-# async def del_user(req : schemas.user_ins , db : db_dependency , credentials: HTTPAuthorizationCredentials = Security(security)):
+@router.delete('/delete' , status_code= status.HTTP_204_NO_CONTENT)
+async def del_user(req : schemas.user_ins , db : db_dependency , credentials: HTTPAuthorizationCredentials = Security(security)):
 
-#     try:
-#         token = credentials.credentials
-#         current_user = get_current_user(token)
+    try:
+        token = credentials.credentials
+        current_user = get_current_user(token)
             
-#         if not current_user:
-#             raise HTTPException(
-#                 status_code=status.HTTP_401_UNAUTHORIZED,
-#                 detail="Could not validate credentials"
-#             )
+        if not current_user:
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Could not validate credentials"
+            )
 
-#         delete = db.query(model.User).filter(model.User.username == req.username).delete(synchronize_session=False)
-#         if delete:
-#             print('before commit')
-#             db.commit()
-#             print('after commit')
-#             return
+        delete = db.query(model.User).filter(model.User.username == req.username).delete(synchronize_session=False)
+        if delete:
+            print('before commit')
+            db.commit()
+            print('after commit')
+            return
         
-#         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)
-#     except Exception as e:
-#         raise HTTPException(
-#             status_code=status.HTTP_401_UNAUTHORIZED,
-#             detail=str(e))
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail=str(e))
 
 
-# if __name__ == '__main__':
-#     uvicorn.run(router , host='0.0.0.0' , port=8000)
+if __name__ == '__main__':
+    uvicorn.run(router , host='0.0.0.0' , port=8000)
