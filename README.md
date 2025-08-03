@@ -5,54 +5,54 @@ This project is a demonstration of a simple e-commerce backend API built using F
 ## Features
 
 **User Registration & Authentication:**
-Users can register, log in, and securely authenticate using JWT tokens.
+* Users can register, log in, and securely authenticate using JWT tokens.
 
 **Product Management:**
-Authenticated users can add new products, view products, like/dislike products, and manage their own product listings.
+* Authenticated users can add new products, view products, like/dislike products, and manage their own product listings.
 
 **Shopping Cart:**
-Users can add products to their shopping cart and manage quantities.
+* Users can add products to their shopping cart and manage quantities.
 
 **Like System:**
-Users can like or dislike products, with like counts tracked per product.
+* Users can like or dislike products, with like counts tracked per product.
 
 **Database Integration:**
-Uses SQLAlchemy ORM with PostgreSQL for persistent data storage.
+* Uses SQLAlchemy ORM with PostgreSQL for persistent data storage.
 
 ## Technologies Used
 
-FastAPI
+* FastAPI
 
-SQLAlchemy
+* SQLAlchemy
 
-PostgreSQL
+* PostgreSQL
 
-Pydantic
+* Pydantic
 
-Passlib (for password hashing)
+* Passlib (for password hashing)
 
-JOSE (for JWT token handling)
+* JOSE (for JWT token handling)
 
 ## Project Structure
 
 
-main.py – FastAPI app initialization and router inclusion
+* main.py – FastAPI app initialization and router inclusion
 
-model.py – SQLAlchemy ORM models for users, products, likes, and shopping cart
+* model.py – SQLAlchemy ORM models for users, products, likes, and shopping cart
 
-schemas.py – Pydantic models for request/response validation
+* schemas.py – Pydantic models for request/response validation
 
-database.py – Database connection and session management
+* database.py – Database connection and session management
 
-authentication.py – User authentication and JWT token utilities
+* authentication.py – User authentication and JWT token utilities
 
-user.py – User-related API endpoints
+* user.py – User-related API endpoints
 
-product.py – Product and shopping cart API endpoints
+* product.py – Product and shopping cart API endpoints
 
-hashing.py – Password hashing and verification
+* hashing.py – Password hashing and verification
 
-jwt_token.py – JWT token creation and verification
+* jwt_token.py – JWT token creation and verification
 
 ## Getting Started
 
@@ -72,7 +72,6 @@ uvicorn main:app --reload
 
 ## Usage
 
-Use the provided API endpoints to register users, authenticate, manage products, and interact 
-with the shopping cart.
+* Use the provided API endpoints to register users, authenticate, manage products, and interact with the shopping cart.
 
-All sensitive endpoints require JWT authentication.
+* All sensitive endpoints require JWT authentication.
